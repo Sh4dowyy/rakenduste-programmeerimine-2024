@@ -60,3 +60,24 @@ const greet = (name = "World") => `Hello ${name}`;
 
 console.log(greet());
 console.log(greet("Dmitrii"));
+
+
+// Ex 8. Liita igale elemendile juurde +5, et uuel muutujale omandaks
+
+const newArray = [1, 2, 3, 4, 5];
+
+const addedArray = newArray.map((element) => element + 5);
+console.log(addedArray)
+
+
+// Ex 9. 
+
+const threeParameters = newArray.map((element, index, array) => {
+    console.log(element, index, array)
+
+    const added = 1 + 2;
+
+    return element + 5;
+});
+
+console.log({ threeParameters })
