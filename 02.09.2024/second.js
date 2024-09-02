@@ -52,3 +52,11 @@ console.log(addNumbersNested(3)(4))
 const addNumbersNestedArrow = (num1) => (num2) => num1 + num2;
 
 console.log(addNumbersNestedArrow(2)(4));
+
+
+// Ex 7. AF printida "Hello (nimi)" ja kasutada string literals
+
+const greet = (name = "World") => `Hello ${name}`;
+
+console.log(greet());
+console.log(greet("Dmitrii"));
