@@ -81,3 +81,64 @@ const threeParameters = newArray.map((element, index, array) => {
 });
 
 console.log({ threeParameters })
+
+
+// Ex 11. .filter() Filtreerida välja uuesti massiivist kõik elemendid, mis on suuremad kui 4
+
+const array = [1, 2, 3, 4, 5, 6];
+
+const filteredArray = array.filter((element) => {
+    return element > 4;
+});
+
+console.log(( filteredArray ));
+
+// Ex 12.
+
+const names = ["Anni", "Mari", "Mati", "Juku"]
+
+const objectifiedNames = names.map(name => {
+    return {
+        name: name,
+        age: name.length + 20,
+        email: `${name}@company.com`,
+        address: `${name} Street 55`,
+        username: name.split("").reverse().join(""),
+    };
+});
+
+console.log(( objectifiedNames ));
+
+
+// {
+//   name: 'Anni',
+//   age: 24,
+//   email: 'anni@company.com',
+//   address: 'Anni Street 55',
+//   username: 'innA'
+// }
+
+
+//13. Tahame juurde lisada pikkuse ja jätta eelnevad kõik andmed samaks, spread syntax
+
+let dmitrii = {
+    name: "Dmitrii",
+    school: "TLU",
+}
+
+raimo = { ...dmitrii, height: 185 };
+
+console.log(raimo)
+
+
+// Ex 14.
+
+const myPromise = () => {
+    return new Promise(resolve => setTimeout(() => resolve("done"), 1000));
+};
+
+const runPromise = async () => {
+    console.log(await myPromise());
+}
+
+runPromise();
