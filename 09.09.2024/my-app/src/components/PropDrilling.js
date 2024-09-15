@@ -19,4 +19,4 @@ const Tallinn = ({ weather }) => {
   return <div>{weather}</div>
 }
 
-export default PropDrilling
+export default PropDrilling;

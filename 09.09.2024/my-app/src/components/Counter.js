@@ -15,7 +15,7 @@ const Counter = () => {
         </button>
       ))}
 
-      <button onClick={() => setTimeout(() => modifyCounter(1), 2000)}>
+      <button onClick={() => setTimeout(() => modifyCounter(), 2000)}>
         async +1
       </button>
     </>
