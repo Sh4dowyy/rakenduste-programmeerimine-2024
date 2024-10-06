@@ -1,14 +1,16 @@
 const hobbies = [
     {
         "id": "17aaadb9-e22b-4783-a403-2683ea3da573",
-        "name": "Sport",
+        "title": "Sport",
+        "priority": 2,
         "createdAt": 1727099333741,
         "updatedAt": null,
         "deleted": false
     },
     {
         "id": "aa6a2f6b-19d8-4eb4-a349-1faddb780f70",
-        "name": "IT",
+        "title": "IT",
+        "priority": 1,
         "createdAt": 1727099339821,
         "updatedAt": null,
         "deleted": false
@@ -28,7 +30,8 @@ exports.create = (req, res) => {
 
     const newHobby = {
         id: crypto.randomUUID(),
-        name: name,
+        title: title,
+        priority: priority,
         createdAt: Date.now(),
         updatedAt: null,
         deleted: false,
