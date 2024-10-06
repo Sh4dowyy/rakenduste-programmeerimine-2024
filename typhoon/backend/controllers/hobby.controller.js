@@ -18,11 +18,12 @@ const hobbies = [
 ];
 
 const crypto = require('crypto');
+const { generateToken, verifyToken } = require("../routes/jwt.routes.js")
 
 exports.create = (req, res) => {
-    const { name } = req.body;
+    const { title, priority } = req.body;
 
-    if (!name || name === "") {
+    if (!title || title === "") {
         return res
           .status(418)
           .send({ type: "Error", message: "Must include a name" });
@@ -43,11 +44,13 @@ exports.create = (req, res) => {
 };
 
 exports.read = (req, res) => {
-    res.send(hobbies)
-};
+    res.send(hobbies);
+  };
 
 exports.update = (req, res) => {
     const { id } = req.params;
 };
 
-exports.delete = (req, res) => {};
+exports.delete = (req, res) => {
+    const { id } = req.params;
+};
