@@ -1,14 +1,17 @@
-
 import "./App.css";
 import Cats from "./components/Cats";
 import Hobbies from "./components/Hobbies";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./theme";
 
 function App() {
   return (
-    <>
-        <Cats />
-        <Hobbies />
-    </>
+    <ThemeProvider theme={theme}>
+      <>
+          <Cats />
+          <Hobbies />
+      </>
+    </ThemeProvider>
   );
 }
 

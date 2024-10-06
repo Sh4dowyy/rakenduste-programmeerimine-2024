@@ -11,23 +11,6 @@ type Hobby = {
   deleted: boolean;
 };
 
-const theme = createTheme({
-    palette: {
-      primary: {
-        main: "#3f51b5",
-      },
-      secondary: {
-        main: "#f50057",
-      },
-    },
-    typography: {
-      h3: {
-        fontSize: "2rem",
-        fontWeight: "bold",
-      },
-    },
-  });
-
 const Hobbies = () => {
   const [hobbies, setHobbies] = useState<Hobby[]>([]);
 
@@ -42,19 +25,16 @@ const Hobbies = () => {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
-        <CssBaseline />
-            <Box>
-            <Typography variant="h3" color="primary">
-                Hobbies
-            </Typography>
-            <List>
-                {hobbies.map((hobby) => (
-                <ListItem key={hobby.id}>{JSON.stringify(hobby)}</ListItem>
-                ))}
-            </List>
-            </Box>
-    </ThemeProvider>
+    <Box>
+      <Typography variant="h3">
+        Hobbies
+      </Typography>
+      <List>
+        {hobbies.map((hobby) => (
+        <ListItem key={hobby.id}>{JSON.stringify(hobby)}</ListItem>
+        ))}
+      </List>
+    </Box>
   );
 };
 
