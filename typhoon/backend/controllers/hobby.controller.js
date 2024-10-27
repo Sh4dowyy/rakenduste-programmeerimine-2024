@@ -44,7 +44,8 @@ exports.create = (req, res) => {
 };
 
 exports.read = (req, res) => {
-    res.send(hobbies);
+    const activeHobbies = hobbies.filter(hobby => !hobby.deleted);
+    res.send(activeHobbies);
 };
 
 exports.update = (req, res) => {
@@ -53,4 +54,12 @@ exports.update = (req, res) => {
 
 exports.delete = (req, res) => {
     const { id } = req.params;
+
+    const hobby = hobbies.find(h => h.id === id);
+
+    console.log("Deleting hobby with ID:", id);
+    console.log("Found hobby:", hobby);
+
+    hobby.deleted = true;
+    res.send({ message: "Hobby marked as deleted", hobby });
 };

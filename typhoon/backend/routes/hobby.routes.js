@@ -11,7 +11,7 @@ router.use(hobbiesRouteMiddleware);
 router.get("/", hobbiesGetRouteMiddleware, hobbiesController.read);
 router.post("/", [ body("title").notEmpty() ], hobbiesController.create);
 router.put("/", hobbiesController.update);
-router.delete("/", hobbiesController.delete);
+router.delete("/:id", hobbiesController.delete);
 
 router.post('/generate-token', generateToken);
 router.post('/verify-token', verifyToken);
