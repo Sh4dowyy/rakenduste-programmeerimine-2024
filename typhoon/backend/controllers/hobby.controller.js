@@ -50,7 +50,17 @@ exports.read = (req, res) => {
 
 exports.update = (req, res) => {
     const { id } = req.params;
+    const { title, priority } = req.body;
+
+    const hobby = hobbies.find(h => h.id === id);
+
+    if (title !== undefined) hobby.title = title;
+    if (priority !== undefined) hobby.priority = priority;
+    hobby.updatedAt = Date.now();
+
+    res.send({ message: "Hobby updated", hobby });
 };
+
 
 exports.delete = (req, res) => {
     const { id } = req.params;
