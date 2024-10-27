@@ -45,7 +45,7 @@ exports.create = (req, res) => {
 
 exports.read = (req, res) => {
     res.send(hobbies);
-  };
+};
 
 exports.update = (req, res) => {
     const { id } = req.params;
