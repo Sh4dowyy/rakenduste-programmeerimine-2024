@@ -2,6 +2,7 @@ import { Box, List, ListItem, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
+import SubmitHobby from "./SubmitHobby";
 
 type Hobby = {
   id: string;
@@ -34,6 +35,7 @@ const Hobbies = () => {
         <ListItem key={hobby.id}>{JSON.stringify(hobby)}</ListItem>
         ))}
       </List>
+      <SubmitHobby fetchHobbies={fetchHobbies} />
     </Box>
   );
 };
